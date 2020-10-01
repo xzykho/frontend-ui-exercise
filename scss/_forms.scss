@@ -16,6 +16,8 @@ All card styles and UI's goes here
 
 .form-message {
     padding: 2em;
+    background: $black;
+    color: $white;
     @include for-size(tablet-portrait-up) {
         padding: 2em;
     }
@@ -31,9 +33,9 @@ All card styles and UI's goes here
     grid-area: right;
 }
 
-.wpcf7 {
-    display: grid;
-    justify-content: center;
+form {
+    // display: grid;
+    // justify-content: center;
     input {
         @include transition-all(all, 0.3s, ease-in-out, 0.25s);
         &[type=submit] {
@@ -73,7 +75,7 @@ All card styles and UI's goes here
     textarea {
         width: 100%;
         padding: 1em;
-        margin: 1em 0 0.5em;
+        margin: 0.5em 0 1.5em;
         border: 1px solid rgba(5, 20, 29, 0.2);
         box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.1);
         background: $white;

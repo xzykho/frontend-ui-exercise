@@ -21,14 +21,16 @@
   <link rel="stylesheet" href="css/styles.css">
 
   <meta name="theme-color" content="#fafafa">
+
+  <script src="https://kit.fontawesome.com/49eed1feb3.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
     <div class="grid">
-        <header>
+        <header class="header-main">
             <div class="grid-inner">
                 <nav class="main-nav">
-                    <a href="#" class="logo">The Digital Embassy</a>
+                    <a href="#" class="logo"><h2>The Digital Embassy</h2></a>
                     <ul>
                         <li><a href="#">Home</a></li>
                         <li><a href="#">About</a></li>
@@ -37,6 +39,7 @@
                         <li><a href="#">Blog</a></li>
                         <li><a href="#">Contact</a></li>
                     </ul>
+                    <button type="button" name="button">Menu</button>
                 </nav>
             </div>
         </header>
@@ -46,14 +49,45 @@
             <div class="hero-text">
                 <h1>Let's make awesome things together.</h1>
                 <p>Branding + Design + Develop</p>
-                <button>Contact us</button>
+                <button class="is-large is-blue is-round">Contact us now</button>
             </div>
         </section>
 
         <div class="grid-inner">
-            <section class="our-services">
+            <section class="our-services margin-bottom">
                 <h2>Services We Provide</h2>
-                <p class="description margin-bottom">What we can do for you and your business is give it a boost from our years of experience.</p>
+                <p class="description margin-bottom">What we can do for you and your business is give it a boost from our years of <strong>experience</strong>.</p>
+                <div class="cards services">
+                    <div class="card-item">
+                        <div class="card-image">
+                            <img src="img/branding.jpg" alt="Our services: Branding">
+                        </div>
+                        <h2 class="card-title">Branding</h2>
+                        <p class="card-snippet center">Do you have any idea how long it takes those cups to decompose.</p>
+                        <a href="#" class="fixed-bottom button is-black">Contact us</a>
+                    </div>
+                    <div class="card-item">
+                        <div class="card-image">
+                            <img src="img/design.jpg" alt="Our services: Design">
+                        </div>
+                        <h2 class="card-title">Design</h2>
+                        <p class="card-snippet center">God creates dinosaurs. God destroys dinosaurs. God creates Man.</p>
+                        <a href="#" class="fixed-bottom button is-black">Contact us</a>
+                    </div>
+                    <div class="card-item">
+                        <div class="card-image">
+                            <img src="img/development.jpg" alt="Our services: Development">
+                        </div>
+                        <h2 class="card-title">Development</h2>
+                        <p class="card-snippet center">Just my luck, no ice. Remind me to thank John for a lovely weekend.</p>
+                        <a href="#" class="fixed-bottom button is-black">Contact us</a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="about-us margin-bottom">
+                <h2>About Us</h2>
+
                 <div class="cards services">
                     <div class="card-item">
                         <div class="card-image">
@@ -82,26 +116,23 @@
                 </div>
             </section>
 
-            <section class="about-us">
-                <h2>About Us</h2>
-            </section>
-
-            <section class="contact-us">
+            <section class="contact-us margin-bottom">
                 <h2>Get in touch</h2>
 
-                <div class="twin-grids has-margin-bottom">
+                <div class="twin-grids">
                     <div class="form-area--left form-container">
                         <form action="/action_page.php">
-                            <label for="fname">First name:</label><br>
+                            <label for="name">Your name</label><br>
                             <input type="text" name="your-name" value="" size="40" class="" aria-required="true" aria-invalid="false">
-                            <label for="lname">Last name:</label><br>
+                            <label for="email">Your email</label><br>
                             <input type="email" name="your-email" value="" size="40" class="" aria-required="true" aria-invalid="false">
-                            <label for="lname">Message:</label><br>
+                            <label for="message">Message</label><br>
                             <textarea name="your-message" cols="40" rows="10" class="wpcf7-form-control wpcf7-textarea wpcf7-validates-as-required" aria-required="true" aria-invalid="false"></textarea>
-                            <input type="submit" value="Submit">
+                            <input type="submit" value="Submit" class="button is-blue is-large">
                         </form>
                     </div>
                     <div class="form-area--right is-dark--gradient form-message">
+                        <h3>We're here to help you</h3>
                         <p>Put the spaghetti in a large pot of well-salted rapidly boiling water and cook only until firmly al dente. (Depending on the brand of pasta, this will be 8 to 10 minutes, but check frequently to see. )</p>
 
                         <p><strong>1600 Pennsivania Ave NW, Washington DC 20500, United States of America</strong></p>
@@ -109,15 +140,27 @@
                             <li><strong>T: (202) 456-111</strong></li>
                             <li><strong>M: (202) 456-1212</strong></li>
                         </ul>
+
+                        <ul class="social">
+                            <li><i class="fab fa-facebook-square fa-lg"></i></li>
+                            <li><i class="fab fa-linkedin fa-lg"></i></li>
+                            <li><i class="fab fa-twitter-square fa-lg"></i></li>
+                        </ul>
                     </div>
                 </div>
             </section>
         </div>
 
         <footer class="dark-bg">
-            <div class="grid-inner center">
+            <div class="grid-inner">
                 <a href="#" class="footer-logo">The Digital Embassy</a>
                 <p>Benefits trump solutions every time. If you want to take your copywriting to the next level and increase conversion rates, put customer benefits at the forefront of your marketing efforts.</p>
+
+                <ul>
+                    <li><i class="fab fa-facebook-square fa-3x"></i></li>
+                    <li><i class="fab fa-linkedin fa-3x"></i></li>
+                    <li><i class="fab fa-twitter-square fa-3x"></i></li>
+                </ul>
             </div>
             <script src="js/vendor/modernizr-3.11.2.min.js"></script>
             <script src="js/plugins.js"></script>

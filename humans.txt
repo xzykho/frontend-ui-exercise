@@ -1,13 +1,10 @@
 # humanstxt.org/
-# The humans responsible & technology colophon
+# The human responsible & technology colophon
 
-# TEAM
+# drigz co
 
-    <name> -- <role> -- <twitter>
+    rod rodriguez -- developer + designer -- xzykho
 
-# THANKS
-
-    <name>
 
 # TECHNOLOGY COLOPHON
 

@@ -1,0 +1,162 @@
+/*
+
+NAVIGATION VARIABLES
+====================
+Main navigation, footer navigation, previous-next.
+
+*/
+
+
+header {
+    a {
+        @include hover-fade;
+        &:hover {
+            opacity: 0.7;
+        }
+    }
+}
+
+.logo-block {
+    display: grid;
+    justify-content: start;
+    align-content: center;
+    h2 {
+        margin: 0;
+        line-height: 0;
+    }
+}
+
+.main-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    ul {
+        display: none;
+        @include for-size(tablet-portrait-up) {
+            display: flex;
+            align-items: center;
+        }
+    }
+
+    ul li {
+        margin-right: 20px;
+        list-style: none;
+        a {
+            @include font-preset(Montserrat, 1em, $white, 400, 1px, 1.25em, center);
+            padding: 1em;
+            text-decoration: none;
+        }
+        &:last-child {
+            margin-right: 0px;
+        }
+    }
+
+    /* Toggle Overlay Style */
+    button {
+        color: $white;
+        @include for-size(tablet-portrait-up) {
+            display: none;
+        }
+    }
+    /* Desktop Navigation */
+    ul {
+        list-style: none;
+        margin: 0;
+        li {
+            display: inline-block;
+            @include font-preset(Montserrat, 1.25, 1.75, $white, 600, 1px, center);
+            text-transform: lowercase;
+            &.current-menu-item {
+                a {
+                    color: $white;
+                    &:before {
+                        color: $high-blue;
+                    	text-shadow: 10px 0 $high-blue, -10px 0 $high-blue;
+                    }
+                }
+            }
+            a {
+                display: block;
+                padding: 1em 1.5em;
+                position: relative;
+                &:before {
+                    position: absolute;
+                	top: 50%;
+                	left: 50%;
+                	color: transparent;
+                	content: '•';
+                	text-shadow: 0 0 transparent;
+                	@include font-size(2, 2.5);
+                	transition: text-shadow 0.3s, color 0.3s;
+                	transform: translateX(-50%);
+                	pointer-events: none;
+                }
+                &:focus::before, &:hover::before {
+                    color: $high-blue;
+                	text-shadow: 10px 0 $high-blue, -10px 0 $high-blue;
+                }
+            }
+        }
+    }
+}
+
+/* The Overlay (background) */
+.overlay {
+  position: fixed; /* Stay in place */
+  z-index: 19; /* Sit on top */
+  left: 0;
+  top: 0;
+  background-color: rgb(5,20,29); /* $midnight fallback color */
+  background-color: rgba(5,20,29,0.95);; /* Black w/opacity */
+  overflow-x: hidden; /* Disable horizontal scroll */
+  transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  text-align: center;
+  ul {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch; /* Default */
+      justify-content: space-between;
+      width: 100%;
+      li {
+          list-style: none;
+      }
+  }
+
+  /* The navigation links inside the overlay */
+  a {
+      color: #818181;
+      font-weight: 600;
+      text-transform: lowercase;
+      text-decoration: none;
+      display: block; /* Display block instead of inline */
+      transition: 0.3s; /* Transition effects on hover (color) */
+      padding: 0.50em 0;
+
+
+      /* When you mouse over the navigation links, change their color */
+      &:hover, &:focus {
+          color: $white;
+          background-color: $high-blue;
+          border-top: 1px solid rgba(255,255,255,0.2);
+          border-bottom: 1px solid rgba(2,2,2,0.2);
+      }
+  }
+}
+/* Open or Close Overlay Style */
+.overlay {
+    &.close {
+        height: 0;
+        width: 100%;
+    }
+    &.open {
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+    }
+}

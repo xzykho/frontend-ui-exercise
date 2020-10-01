@@ -4,9 +4,10 @@
 ----------------------------------------------------------------
 # @import
     ## mixins
-    ## buttons
-    ## color
     ## typography
+    ## color
+    ## buttons
+    ## navigation
     ## cards
     ## forms
     ## heroes
@@ -19,9 +20,10 @@
 
 @import
     "mixins",
-    "buttons",
     "color",
     "typography",
+    "buttons",
+    "navigation",
     "cards",
     "forms",
     "heroes";
@@ -101,31 +103,8 @@ h2 {
 // $Sections
 
 header {
-    background: #212121;
+    background: $black;
     padding: 1em 0;
-}
-
-.main-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    ul {
-        display: flex;
-        align-items: center;
-    }
-
-    ul li {
-        margin-right: 20px;
-        list-style: none;
-        a {
-            @include font-preset(Montserrat, 1em, $black, 400, 1px, 1.25em, center);
-            text-decoration: none;
-        }
-        &:last-child {
-            margin-right: 0px;
-        }
-    }
 }
 
 .hero,
@@ -135,10 +114,47 @@ header {
     min-height: 80vh;
 }
 
+.contact-us {
+    ul.social {
+        display: flex;
+        align-items: center;
+        padding: 0;
+        li {
+            list-style: none;
+            margin-right: 1em;
+        }
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}
 // Footer
 footer {
     padding: 2em 0;
+    position: relative;
+    p {
+        max-width: 90%;
+        text-align: center;
+        margin: auto;
+        @include for-size(tablet-portrait-up) {
+            max-width: 70%;
+        }
+    }
+    ul {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 2em 0;
+        li {
+            list-style: none;
+            margin-right: 1.5em;
+        }
+        &:last-child {
+            margin-right: 0;
+        }
+    }
 }
+
 .footer-logo {
     display: block;
     text-indent: -9999px;
@@ -146,6 +162,7 @@ footer {
     height: 246px;
     background: url(../assets/logo.svg);
     background-size: 300px 246px;
+    margin: auto;
     margin-bottom: 3em;
 }
 
@@ -167,11 +184,10 @@ footer {
     background: $black;
     color: $white;
 }
-.center {
-    margin: 0 auto;
-    text-align: center;
+.center-xy {
+    @include center-xy;
 }
 
 .margin-bottom {
-    margin-bottom: 1.5em;
+    margin-bottom: 2em;
 }

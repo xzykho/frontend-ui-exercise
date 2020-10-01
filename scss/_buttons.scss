@@ -3,7 +3,7 @@
 * .button - modifies the css selector (for styling links as buttons)
 */
 
-button {
+button, .button {
     padding: 0;
     border: 0 none;
     cursor: pointer;
@@ -13,7 +13,7 @@ button {
     display: inline-block;
     vertical-align: middle;
 
-    font-weight: 600;
+    font-weight: 400;
     text-align: center;
     white-space: nowrap;
 }
@@ -27,7 +27,7 @@ button.has-shadow {
     vertical-align: middle;
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.13);
 
-    font-weight: 600;
+    font-weight: 400;
     text-align: center;
     white-space: nowrap;
 }
@@ -52,12 +52,23 @@ button.is-regular {
     padding: 0.5em 2em;
 }
 
-button.is-green, .button.is-blue {
-    // background: $high-blue;
+button.is-blue, .button.is-blue {
+    color: $white;
+    background: $high-blue;
     &:focus, &:hover {
-        // color: $white;
-        // background: $green;
+        color: $white;
+        background: $blue;
     }
+}
+
+button.is-black, .button.is-black {
+    color: $white;
+    background: rgba(0, 0, 0, 1);
+    &:focus, &:hover {
+        color: $white;
+        background: rgba(0, 0, 0, 0.9);
+    }
+
 }
 
 button.is-round, .button.is-round {

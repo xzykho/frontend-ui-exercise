@@ -18,11 +18,11 @@ Sitewide hero headers.
     background: rgb(5,20,29);
     background: linear-gradient(345deg, rgba(5,20,29,1) 0%, rgba(5,20,29,1) 52%, rgba(16,97,149,1) 100%);
     @include for-size(desktop-up) {
-        height: 80vh;
+        // height: 80vh;
     }
 
     &--homepage {
-        height: 80vh;
+        // height: 80vh;
         color: $white;
         &:before {
             content: "";
@@ -36,8 +36,8 @@ Sitewide hero headers.
             overflow: hidden;
             z-index: 0;
 
-            background: bluel;
-            background: linear-gradient(335deg, blue 50%, green 100%);
+            background: $blue;
+            background: linear-gradient(335deg, $blue 50%, green 100%);
         }
     }
     img {
@@ -56,10 +56,10 @@ Sitewide hero headers.
         transform: translate(-50%, -50%);
         color: white;
         h1 {
-            @include font-preset(Montserrat, 2.50em, inherit, 400, 1px, 2.25em, center);
+            // @include font-preset(Montserrat, 2.50em, inherit, 400, 1px, 2.25em, center);
         }
         p {
-            @include font-preset(Montserrat, 1.75em, inherit, 300, 1px, 2.25em, center);
+            // @include font-preset(Montserrat, 1.75em, inherit, 300, 1px, 2.25em, center);
         }
     }
 }

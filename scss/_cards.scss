@@ -70,7 +70,8 @@ All card styles and UI's goes here
     h2 {
         font-size: 1.75em;
         line-height: 1.35em;
-        font-weight: 600;
+        font-weight: 400;
+        margin-bottom: 0;
     }
     a {
         color: $black;
@@ -84,7 +85,7 @@ All card styles and UI's goes here
         padding: 1.25em;
 
         @include for-size(tablet-landscape-up) {
-            padding: 1.5em;
+            padding: 0 1.5em;
         }
 
         p {

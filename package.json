@@ -10,7 +10,7 @@
     "dev": "parcel index.html --open",
     "start": "npm run build && npm run dev",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "scss": "node-sass --watch scss -o css"
+    "scss": "node-sass --watch scss -o css --output-style compressed"
   },
   "devDependencies": {
     "parcel-bundler": "^1.12.4"
