@@ -1,0 +1,126 @@
+/*
+
+    MIXINS AND VARIABLES
+    ====================
+
+    All mixins and variables live here.
+
+*/
+
+// Define Media Queries
+
+@mixin for-size($range) {
+  $phone-upper-boundary: 600px;
+  $tablet-portrait-upper-boundary: 900px;
+  $tablet-landscape-upper-boundary: 1200px;
+  $desktop-upper-boundary: 1800px;
+  $ultra-desktop-upper-boundary: 160em;
+
+  @if $range == phone-only {
+      @media (max-width: #{$phone-upper-boundary - 1}) { @content; }
+  } @else if $range == tablet-portrait-up {
+      @media (min-width: $phone-upper-boundary) { @content; }
+  } @else if $range == tablet-landscape-up {
+      @media (min-width: $tablet-portrait-upper-boundary) { @content; }
+  } @else if $range == desktop-up {
+      @media (min-width: $tablet-landscape-upper-boundary) { @content; }
+  } @else if $range == big-desktop-up {
+      @media (min-width: $desktop-upper-boundary) { @content; }
+  } @else if $range == ultra-desktop-up {
+      @media (min-width: $ultra-desktop-upper-boundary) { @content; }
+  }
+}
+
+
+// Font Mixins
+// Use: @include font-preset(Poppins, 0.65em, $dawn, 700, -1px, 1em, left);
+@mixin font-preset($font-type: default, $font-size:24px, $font-color:#000, $font-weight:normal, $letter-spacing:0, $line-height:1.3em, $text-align:left) {
+    @if $font-type == default {
+        font-family: 'Helvetica', verdana, arial, sans-serif;
+    }
+    @else if $font-type == Montserrat {
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    font-size: $font-size;
+    color: $font-color;
+    font-weight: $font-weight;
+    letter-spacing: $letter-spacing;
+    line-height:  $line-height;
+    text-align: $text-align;
+}
+
+// REM font sizing
+// Use: @include font-size(1,1.5);
+@mixin font-size($size: 1, $line: $size * 1.5) {
+	font-size     : ($size * 16) + px;
+	line-height   : ($line * 23) + px;
+	font-size     : $size + rem;
+	line-height   : $line + rem;
+}
+
+/*========================================================================== */
+/* $Transitions Mixins
+/*========================================================================== */
+// Use: @include transition-all(all, 0.3s, ease-in-out, 0.25s);
+@mixin transition-all($property, $duration, $function, $delay:0s) {
+    transition: $property $duration $function $delay;
+}
+
+/* Hover animation */
+// Use: @include hover-fade;
+@mixin hover-fade {
+    transition: all 0.3s ease 0.3s;
+}
+
+/*========================================================================== */
+/* $Border Radius Mixins
+/*========================================================================== */
+// Use: @include border-radius(100px)
+
+@mixin border-radius($radius) {
+  border-radius: $radius;
+  background-clip: padding-box;  /* stops bg color from leaking outside the border: */
+}
+
+// Single side border-radius
+@mixin border-top-radius($radius) {
+  border-top-right-radius: $radius;
+   border-top-left-radius: $radius;
+   background-clip: padding-box;
+}
+@mixin border-right-radius($radius) {
+  border-bottom-right-radius: $radius;
+     border-top-right-radius: $radius;
+     background-clip: padding-box;
+}
+@mixin border-bottom-radius($radius) {
+  border-bottom-right-radius: $radius;
+   border-bottom-left-radius: $radius;
+   background-clip: padding-box;
+}
+@mixin border-left-radius($radius) {
+  border-bottom-left-radius: $radius;
+     border-top-left-radius: $radius;
+     background-clip: padding-box;
+}
+
+/*========================================================================== */
+/* $Weight and Height Mixins
+/*========================================================================== */
+// Use: @include width-height(300px, 300px);
+
+@mixin width-height($width:0, $height:0) {
+    width: $width;
+    height: $height;
+}
+
+/*========================================================================== */
+/* $Hide text or image replacement
+/*========================================================================== */
+// Use: @include hide-text;
+@mixin hide-text {
+    font: 0/0 a;
+    text-shadow: none;
+    color: transparent;
+}

@@ -1,0 +1,219 @@
+/*
+FORM LAYOUTs AND UI
+==================
+All card styles and UI's goes here
+- Contact Form (Let's Talk)
+- Search Forms (Sitewide and 404)
+*/
+
+.form-container {
+    background: $white;
+    padding: 1em;
+    @include for-size(tablet-portrait-up) {
+        padding: 2em;
+    }
+}
+
+.form-message {
+    padding: 2em;
+    @include for-size(tablet-portrait-up) {
+        padding: 2em;
+    }
+    @include for-size(desktop-up) {
+        padding: 5em;
+    }
+}
+
+.form-area--left {
+    grid-area: left;
+}
+.form-area--right {
+    grid-area: right;
+}
+
+.wpcf7 {
+    display: grid;
+    justify-content: center;
+    input {
+        @include transition-all(all, 0.3s, ease-in-out, 0.25s);
+        &[type=submit] {
+            border: none;
+            text-decoration: none;
+
+            vertical-align: middle;
+            text-align: center;
+            white-space: nowrap;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.13);
+            cursor: pointer;
+            display: block;
+            margin: 0 auto;
+            padding: 1em 3em;
+            font-weight: 600;
+            color: white;
+            background: $high-blue;
+            &:focus, &:hover {
+                // background: $green;
+            }
+            @include border-radius(500px);
+        }
+
+    }
+
+    label {
+        // @include font-size(1.25, 1.75);
+        text-transform: uppercase;
+        font-weight: 600;
+        sup {
+            cursor: help;
+            font-size: 0.60em;
+        }
+    }
+
+    input[type=text], input[type=email],
+    textarea {
+        width: 100%;
+        padding: 1em;
+        margin: 1em 0 0.5em;
+        border: 1px solid rgba(5, 20, 29, 0.2);
+        box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.1);
+        background: $white;
+        &:focus {
+            background: rgba(123,197,42, 0.2);
+            outline: 1px solid $high-blue;
+            label {
+                display: none;
+            }
+        }
+    }
+}
+
+span.wpcf7 {
+    &-not-valid-tip {
+        font-size: 0.85em;
+        // color: $red;
+    }
+}
+
+div.wpcf7 {
+    &-response-output {
+        padding: 2em;
+    }
+    &-validation-errors {
+        // background: $yellow;
+    }
+    &-mail-sent-ok {
+        // background: $green;
+        color: $white;
+    }
+}
+
+
+/* $Search Form
+========================================*/
+.search-template {
+    margin: 0 auto;
+    width: 100%;
+    @include for-size(tablet-portrait-up) {
+        width: 90%;
+    }
+    .search-block {
+        width: 100%;
+        display: block;
+        position: relative;
+    }
+    form {
+        white-space: nowrap;
+        // background: $yellow;
+        // padding: 10px;
+        display: flex;
+        // @include border-radius(500px);
+    }
+    label {
+        @include hide-text;
+    }
+    input[type="text"] {
+        border: 0;
+        width: 100%;
+        padding: 1em;
+        outline: none;
+        color:$black;
+        background: $white;
+        overflow: hidden;
+        @include border-radius(500px);
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        &:focus {
+            outline: none;
+        }
+        &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+          opacity: 0.5;
+          text-overflow: ellipsis;
+        }
+        &::-moz-placeholder { /* Firefox 19+ */
+          opacity: 0.5;
+          text-overflow: ellipsis;
+        }
+        &:-ms-input-placeholder { /* IE 10+ */
+          opacity: 0.5;
+          text-overflow: ellipsis;
+        }
+        &:-moz-placeholder { /* Firefox 18- */
+          opacity: 0.5;
+          text-overflow: ellipsis;
+        }
+    }
+    button[type="submit"] {
+        border: 0;
+        display: block;
+        color: $white;
+        background: $black;
+        // padding: 1em;
+        @include width-height(60px, 100%);
+        @include for-size(tablet-portrait-up) {
+            // padding: 1em 2em;
+            @include width-height(128px, 100%);
+        }
+
+        position: absolute;
+        top:0;
+        right: -7px;
+        text-align: center;
+        cursor: pointer;
+        @include hover-fade;
+        @include border-right-radius(500px);
+        &:hover {
+            background: $high-blue;
+        }
+    }
+    .autocomplete {
+        // background: $red;
+    }
+}
+
+.search-result {
+    color: $white;
+    h3 {
+        font-weight: 300;
+    }
+    span {
+        font-weight: 400;
+    }
+}
+
+.search-word {
+    span {
+        font-weight: 600;
+        paddingbottom: 0.125em;
+        // border-bottom: 4px solid $red;
+    }
+}
+
+.scroll-down {
+    a {
+        color: $black;
+        padding-top: 18px;
+        font-size: 1.25em;
+        &:focus, &:hover {
+            color: $black;
+        }
+    }
+}

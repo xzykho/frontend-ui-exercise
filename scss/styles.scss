@@ -1,0 +1,177 @@
+/*!
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# @import
+    ## mixins
+    ## buttons
+    ## color
+    ## typography
+    ## cards
+    ## forms
+    ## heroes
+# Global styles
+# Grid layout
+# Headings
+# Sections
+# Misc
+--------------------------------------------------------------*/
+
+@import
+    "mixins",
+    "buttons",
+    "color",
+    "typography",
+    "cards",
+    "forms",
+    "heroes";
+
+// $Global Styles
+html {
+    font-size: 100%;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', 'sans-serif';
+    background: #f5f7f8;
+    color: $black;
+
+    padding: 0;
+    margin: 0 auto;
+    min-height: 100vh;
+    height: 100%;
+    width: 100%;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+ul.tel-no {
+    padding: 0;
+    list-style: none;
+}
+
+// $Grid layouts
+.grid {
+	width: 100%;
+}
+
+.grid-inner {
+	margin-top: 4em;
+	margin: 0 4%;
+
+	@include for-size(tablet-portrait-up) {
+		margin: 0 8%;
+	}
+
+	@include for-size(desktop-up) {
+		margin: 0 12%;
+	}
+
+	@include for-size(ultra-desktop-up) {
+		margin: 0 16%;
+	}
+}
+
+.twin-grids {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: 1fr;
+	grid-template-areas:
+	"right"
+	"left";
+    @include for-size(desktop-up) {
+		height: 100%;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas:
+        "left right";
+    }
+}
+
+// $Headings
+h1 {
+    @include font-preset(Montserrat, 2.50em, inherit, 600, 1px, 2.25em, center);
+}
+h2 {
+    @include font-preset(Montserrat, 2.25em, inherit, 400, 1px, 2.75em, center);
+}
+
+// $Sections
+
+header {
+    background: #212121;
+    padding: 1em 0;
+}
+
+.main-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    ul {
+        display: flex;
+        align-items: center;
+    }
+
+    ul li {
+        margin-right: 20px;
+        list-style: none;
+        a {
+            @include font-preset(Montserrat, 1em, $black, 400, 1px, 1.25em, center);
+            text-decoration: none;
+        }
+        &:last-child {
+            margin-right: 0px;
+        }
+    }
+}
+
+.hero,
+.our-services,
+.about-us,
+.contact-us {
+    min-height: 80vh;
+}
+
+// Footer
+footer {
+    padding: 2em 0;
+}
+.footer-logo {
+    display: block;
+    text-indent: -9999px;
+    width: 300px;
+    height: 246px;
+    background: url(../assets/logo.svg);
+    background-size: 300px 246px;
+    margin-bottom: 3em;
+}
+
+// $Misc
+.logo {
+    display: block;
+    text-indent: -9999px;
+    width: 100px;
+    height: 82px;
+    background: url(../assets/logo.svg);
+    background-size: 100px 82px;
+}
+
+.description {
+    @include font-preset(Montserrat, 1em, $black, 400, 1px, 1.25em, center);
+}
+
+.dark-bg {
+    background: $black;
+    color: $white;
+}
+.center {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.margin-bottom {
+    margin-bottom: 1.5em;
+}

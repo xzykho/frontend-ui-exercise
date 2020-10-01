@@ -1,0 +1,65 @@
+/*
+
+HERO HEADER STYLES
+==================
+
+Sitewide hero headers.
+
+*/
+
+.hero-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    background: rgb(5,20,29);
+    background: linear-gradient(345deg, rgba(5,20,29,1) 0%, rgba(5,20,29,1) 52%, rgba(16,97,149,1) 100%);
+    @include for-size(desktop-up) {
+        height: 80vh;
+    }
+
+    &--homepage {
+        height: 80vh;
+        color: $white;
+        &:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            opacity: .55;
+            height: 100%;
+            overflow: hidden;
+            z-index: 0;
+
+            background: bluel;
+            background: linear-gradient(335deg, blue 50%, green 100%);
+        }
+    }
+    img {
+        opacity: 0.7;
+        width: 100%;
+        height: 100%;
+        -o-object-fit: cover;
+           object-fit: cover;
+    }
+    .hero-text {
+        text-align: center;
+        position: absolute;
+        width: 100%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+        h1 {
+            @include font-preset(Montserrat, 2.50em, inherit, 400, 1px, 2.25em, center);
+        }
+        p {
+            @include font-preset(Montserrat, 1.75em, inherit, 300, 1px, 2.25em, center);
+        }
+    }
+}

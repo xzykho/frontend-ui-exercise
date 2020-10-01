@@ -1,0 +1,65 @@
+/*
+* button - modifies the html tag (for when using buttons)
+* .button - modifies the css selector (for styling links as buttons)
+*/
+
+button {
+    padding: 0;
+    border: 0 none;
+    cursor: pointer;
+    background: none;
+    @include transition-all(all, 0.3s, ease-in-out, 0.25s);
+
+    display: inline-block;
+    vertical-align: middle;
+
+    font-weight: 600;
+    text-align: center;
+    white-space: nowrap;
+}
+
+button.has-shadow {
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.13);
+}
+
+.button {
+    display: inline-block;
+    vertical-align: middle;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.13);
+
+    font-weight: 600;
+    text-align: center;
+    white-space: nowrap;
+}
+
+button.is-large {
+    padding: 0.75em 3em;
+    @include for-size(tablet-portrait-up) {
+        padding: 0.79em 3em;
+    }
+}
+.button.is-large {
+    padding: 0.5em 3em;
+}
+
+button.is-regular {
+    padding: 0.75em 2em;
+    @include for-size(tablet-portrait-up) {
+        padding: 0.79em 2em;
+    }
+}
+.button.is-regular {
+    padding: 0.5em 2em;
+}
+
+button.is-green, .button.is-blue {
+    // background: $high-blue;
+    &:focus, &:hover {
+        // color: $white;
+        // background: $green;
+    }
+}
+
+button.is-round, .button.is-round {
+    @include border-radius(500px);
+}

@@ -1,0 +1,33 @@
+{
+  "name": "frontend-ui-exercise",
+  "version": "0.0.1",
+  "description": "A Rod Rodriguez (drigz.co) Front end UI excercise for The Digital Embassy.",
+  "keywords": [],
+  "license": "ISC",
+  "author": "Rod Rodriguez",
+  "scripts": {
+    "build": "parcel build index.html",
+    "dev": "parcel index.html --open",
+    "start": "npm run build && npm run dev",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "scss": "node-sass --watch scss -o css"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.12.4"
+  },
+  "main": "index.js",
+  "directories": {
+    "doc": "doc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xzykho/frontend-ui-exercise.git"
+  },
+  "bugs": {
+    "url": "https://github.com/xzykho/frontend-ui-exercise/issues"
+  },
+  "homepage": "https://github.com/xzykho/frontend-ui-exercise#readme",
+  "dependencies": {
+    "node-sass": "^4.14.1"
+  }
+}
