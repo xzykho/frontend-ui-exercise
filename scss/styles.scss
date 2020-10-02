@@ -32,6 +32,7 @@
 html {
     font-size: 100%;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -138,6 +139,7 @@ header {
 footer {
     padding: 2em 0;
     position: relative;
+    width: 100%;
     p {
         max-width: 90%;
         text-align: center;
@@ -154,6 +156,13 @@ footer {
         li {
             list-style: none;
             margin-right: 1.5em;
+            .fab {
+                cursor: pointer;
+                @include hover-fade;
+                &:focus, &:hover {
+                    color:$high-blue;
+                }
+            }
         }
         &:last-child {
             margin-right: 0;
@@ -170,6 +179,11 @@ footer {
     background-size: 300px 246px;
     margin: auto;
     margin-bottom: 3em;
+	transform: scale(1);
+    &:hover {
+        @include transition-all(all, 0.3s, ease-in-out, 0.3s);
+        transform: scale(1.1);
+    }
 }
 
 // $Misc

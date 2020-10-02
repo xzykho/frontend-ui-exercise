@@ -18,43 +18,57 @@
 
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/main.css">
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/styles.css"  onload="this.media='all'">
 
   <meta name="theme-color" content="#fafafa">
 
   <script src="https://kit.fontawesome.com/49eed1feb3.js" crossorigin="anonymous"></script>
 </head>
 
-<body>
+<body id="home">
     <div class="grid">
         <header class="header-main">
             <div class="grid-inner">
                 <nav class="main-nav">
-                    <a href="#" class="logo"><h2>The Digital Embassy</h2></a>
+                    <a href="#" class="logo" alt="The Digital Embassy logo"><h2>The Digital Embassy</h2></a>
                     <ul>
                         <li><a href="#">Home</a></li>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Work</a></li>
-                        <li><a href="#">Services</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#work">Work</a></li>
+                        <li><a href="#services">Services</a></li>
                         <li><a href="#">Blog</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <li><a href="#contact">Contact</a></li>
                     </ul>
-                    <button type="button" name="button">Menu</button>
+                    <button type="button" name="button" onclick="openNav()">Menu</button>
                 </nav>
             </div>
         </header>
 
+        <div class="overlay" id="myNav">
+            <button class="close-button" onclick="closeNav()">
+                <i class="far fa-times-circle"></i>
+            </button>
+            <ul>
+                <li><a href="#home" onclick="closeNav()">Home</a></li>
+                <li><a href="#about" onclick="closeNav()">About</a></li>
+                <li><a href="#work">Work</a></li>
+                <li><a href="#services" onclick="closeNav()">Services</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#contact" onclick="closeNav()">Contact</a></li>
+            </ul>
+        </div>
+
         <section class="hero-header hero-header--homepage">
             <img src="img/user-journey.jpg" alt="Making awesome things together">
             <div class="hero-text">
-                <h1>Let's make awesome things together.</h1>
+                <h1>Let's make awesome stuff together.</h1>
                 <p>Branding + Design + Develop</p>
                 <button class="is-large is-blue is-round">Contact us now</button>
             </div>
         </section>
 
         <div class="grid-inner">
-            <section class="our-services margin-bottom">
+            <section class="our-services margin-bottom" id="services">
                 <h2>Services We Provide</h2>
                 <p class="description margin-bottom">What we can do for you and your business is give it a boost from our years of <strong>experience</strong>.</p>
                 <div class="cards services">
@@ -85,25 +99,25 @@
                 </div>
             </section>
 
-            <section class="about-us margin-bottom">
+            <section class="about-us margin-bottom" id="about">
                 <h2>About Us</h2>
 
-                <div class="cards services">
-                    <div class="card-item">
+                <div class="cards services go-dark">
+                    <div class="card-item profile">
                         <div class="card-profile-image">
                             <img src="img/eleven.jpg" alt="Stranger Things: Eleven">
                         </div>
                         <h2 class="card-title">Eleven</h2>
                         <p class="card-snippet center-text">Eleven was kidnapped and raised in Hawkins National Laboratory, where she was experimented on for her inherited psychokinetic abilities.</p>
                     </div>
-                    <div class="card-item">
+                    <div class="card-item profile">
                         <div class="card-profile-image">
                             <img src="img/mike.png" alt="Stnger Things: Mike">
                         </div>
                         <h2 class="card-title">Mike</h2>
                         <p class="card-snippet center-text">When Mike's best friend, Will Byers, mysteriously went missing, he and his other friends, Lucas and Dustin, made it their mission to find him.</p>
                     </div>
-                    <div class="card-item">
+                    <div class="card-item profile">
                         <div class="card-profile-image">
                             <img src="img/dustin.jpg" alt="Stranger Things: Dustin">
                         </div>
@@ -113,12 +127,12 @@
                 </div>
             </section>
 
-            <section class="contact-us margin-bottom">
+            <section class="contact-us margin-bottom" id="contact">
                 <h2>Get in touch</h2>
 
                 <div class="twin-grids">
                     <div class="form-area--left form-container">
-                        <form action="/action_page.php">
+                        <form action="/">
                             <label for="name">Your name</label><br>
                             <input type="text" name="your-name" value="" size="40" class="" aria-required="true" aria-invalid="false">
                             <label for="email">Your email</label><br>
@@ -134,8 +148,8 @@
 
                         <p><strong>1600 Pennsivania Ave NW, Washington DC 20500, United States of America</strong></p>
                         <ul class="tel-no">
-                            <li><strong>T: (202) 456-111</strong></li>
-                            <li><strong>M: (202) 456-1212</strong></li>
+                            <li><i class="fas fa-phone-alt fa-fw"></i> (202) 456-111</li>
+                            <li><i class="fas fa-mobile-alt fa-fw"></i> (202) 456-1212</li>
                         </ul>
 
                         <ul class="social">
@@ -150,7 +164,7 @@
 
         <footer class="dark-bg">
             <div class="grid-inner">
-                <a href="#" class="footer-logo">The Digital Embassy</a>
+                <a href="#home" class="footer-logo">The Digital Embassy</a>
                 <p>Benefits trump solutions every time. If you want to take your copywriting to the next level and increase conversion rates, put customer benefits at the forefront of your marketing efforts.</p>
 
                 <ul>

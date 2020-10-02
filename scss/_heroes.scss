@@ -37,12 +37,12 @@ Sitewide hero headers.
             overflow: hidden;
             z-index: 0;
 
-            background: $blue;
-            background: linear-gradient(335deg, $blue 50%, green 100%);
+            background: $black;
+            // background: linear-gradient(335deg, $blue 50%, $black 100%);
         }
     }
     img {
-        opacity: 0.7;
+        opacity: 0.3;
         width: 100%;
         height: 100%;
         -o-object-fit: cover;
@@ -59,7 +59,7 @@ Sitewide hero headers.
         h1 {
             @include font-preset(Montserrat, 1.50em, inherit, 600, 1px, 1.75em, center);
             @include for-size(desktop-up) {
-                @include font-preset(Montserrat, 2.50em, inherit, 400, 1px, 2.25em, center);
+                @include font-preset(Montserrat, 2.50em, inherit, 400, 1px, 1em, center);
             }
         }
         p {

@@ -43,7 +43,7 @@ header {
         margin-right: 20px;
         list-style: none;
         a {
-            @include font-preset(Montserrat, 1em, $white, 400, 1px, 1.25em, center);
+            @include font-preset(Montserrat, 1em, $white, 600, 1px, 1.25em, center);
             padding: 1em;
             text-decoration: none;
         }
@@ -55,6 +55,8 @@ header {
     /* Toggle Overlay Style */
     button {
         color: $white;
+        font-weight: 600;
+        text-transform: lowercase;
         @include for-size(tablet-portrait-up) {
             display: none;
         }
@@ -65,7 +67,6 @@ header {
         margin: 0;
         li {
             display: inline-block;
-            @include font-preset(Montserrat, 1.25, 1.75, $white, 600, 1px, center);
             text-transform: lowercase;
             &.current-menu-item {
                 a {
@@ -87,7 +88,6 @@ header {
                 	color: transparent;
                 	content: '•';
                 	text-shadow: 0 0 transparent;
-                	@include font-size(2, 2.5);
                 	transition: text-shadow 0.3s, color 0.3s;
                 	transform: translateX(-50%);
                 	pointer-events: none;
@@ -107,30 +107,41 @@ header {
   z-index: 19; /* Sit on top */
   left: 0;
   top: 0;
+  width: 100%;
+  height: 100%;
   background-color: rgb(5,20,29); /* $midnight fallback color */
   background-color: rgba(5,20,29,0.95);; /* Black w/opacity */
   overflow-x: hidden; /* Disable horizontal scroll */
   transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
 
-  display: flex;
+  display: none;
   flex-direction: column;
   flex-wrap: nowrap;
   justify-content: center;
   text-align: center;
+  .close-button {
+      position: absolute;
+      top: 25px;
+      right: 25px;
+      font-size: 40px;
+      color: $white;
+  }
   ul {
       display: flex;
       flex-direction: column;
       align-items: stretch; /* Default */
       justify-content: space-between;
+      padding: 0;
       width: 100%;
       li {
           list-style: none;
+          @include font-preset(Montserrat, 1.25em, inherit, 600, 1px, 1.75em, center);
       }
   }
 
   /* The navigation links inside the overlay */
   a {
-      color: #818181;
+      color: $white;
       font-weight: 600;
       text-transform: lowercase;
       text-decoration: none;
@@ -147,16 +158,4 @@ header {
           border-bottom: 1px solid rgba(2,2,2,0.2);
       }
   }
-}
-/* Open or Close Overlay Style */
-.overlay {
-    &.close {
-        height: 0;
-        width: 100%;
-    }
-    &.open {
-        height: 100%;
-        width: 100%;
-        overflow: hidden;
-    }
 }
