@@ -94,10 +94,16 @@ ul.tel-no {
 
 // $Headings
 h1 {
-    @include font-preset(Montserrat, 2.50em, inherit, 600, 1px, 2.25em, center);
+    @include font-preset(Montserrat, 1.50em, inherit, 600, 1px, 1.75em, center);
+    @include for-size(desktop-up) {
+        @include font-preset(Montserrat, 2.50em, inherit, 400, 1px, 2.25em, center);
+    }
 }
 h2 {
-    @include font-preset(Montserrat, 2.25em, inherit, 400, 1px, 2.75em, center);
+    @include font-preset(Montserrat, 1.25em, inherit, 600, 1px, 1.75em, center);
+    @include for-size(desktop-up) {
+        @include font-preset(Montserrat, 2.25em, inherit, 400, 1px, 2.75em, center);
+    }
 }
 
 // $Sections
@@ -178,6 +184,10 @@ footer {
 
 .description {
     @include font-preset(Montserrat, 1em, $black, 400, 1px, 1.25em, center);
+}
+
+.center-text {
+    text-align: center;
 }
 
 .dark-bg {
